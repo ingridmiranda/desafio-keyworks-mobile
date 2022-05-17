@@ -1,7 +1,8 @@
-import 'package:desafio_keyworks/ui/pages/home/components/components.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/components.dart';
+import '../../pages/pages.dart';
+import './components/components.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,6 +18,7 @@ class _HomePageState extends State<HomePage> {
     AppColors.secondaryColor,
     AppColors.secondaryColor
   ];
+  final _widgetsList = const [LaunchPage(), MapPage(), ConfigurationsPage()];
 
   void _setMenuOption(int value) {
     setState(() {
@@ -43,7 +45,7 @@ class _HomePageState extends State<HomePage> {
           currentIndex: _currentIndex,
           onTap: _setMenuOption,
           currentColor: _currentColor),
-      body: const Text('Home'),
+      body: _widgetsList[_currentIndex],
     );
   }
 }
