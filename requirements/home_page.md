@@ -1,6 +1,6 @@
 ## Considerações sobre a tela Home Page
 
-1. Deve conter um carrosel de notícias do app, contendo 3 notícias
+1. ✅ Deve conter um carrosel de notícias do app, contendo 3 notícias
 2. Deve implementar apenas uma das notícias
 3. Ao clicar na notícia implementada, o app deve exibi-la, com texto Lorem Ipsum
 4. Deve listar os próximos 4 foguetes a serem lançados

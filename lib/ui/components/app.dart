@@ -13,6 +13,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           fontFamily: 'Roboto',
+          iconTheme: const IconThemeData(color: AppColors.lightColor),
           primaryColor: AppColors.primaryColor,
           backgroundColor: AppColors.darkColor,
           scaffoldBackgroundColor: AppColors.darkColor,
