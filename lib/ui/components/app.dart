@@ -12,6 +12,7 @@ class App extends StatelessWidget {
       title: 'Desafio Keyworks',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          fontFamily: 'Roboto',
           primaryColor: AppColors.primaryColor,
           backgroundColor: AppColors.darkColor,
           scaffoldBackgroundColor: AppColors.darkColor,
