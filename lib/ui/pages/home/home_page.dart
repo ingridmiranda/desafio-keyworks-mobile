@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
     AppColors.secondaryColor
   ];
   final _widgetsList = const [LaunchPage(), MapPage(), ConfigurationsPage()];
+  final _titleList = ['Home', 'Mapa', 'Configurações'];
 
   void _setMenuOption(int value) {
     setState(() {
@@ -38,7 +39,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Text('Home'),
+        title: Text(_titleList[_currentIndex]),
         actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.menu))],
       ),
       bottomNavigationBar: BottomNavigationHome(
