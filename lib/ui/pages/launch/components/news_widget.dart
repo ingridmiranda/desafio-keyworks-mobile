@@ -94,14 +94,16 @@ class NewsWidget extends StatelessWidget {
                               ),
                             ),
                           ),
-                          IconButton(
-                              onPressed: () {
-                                _changePosition(++index);
-                              },
-                              icon: Icon(Icons.arrow_forward_ios,
-                                  size: 45,
-                                  color:
-                                      AppColors.lightColor.withOpacity(0.64)))
+                          index == 2
+                              ? const SizedBox()
+                              : IconButton(
+                                  onPressed: () {
+                                    _changePosition(++index);
+                                  },
+                                  icon: Icon(Icons.arrow_forward_ios,
+                                      size: 45,
+                                      color: AppColors.lightColor
+                                          .withOpacity(0.64)))
                         ],
                       )
                     ],
