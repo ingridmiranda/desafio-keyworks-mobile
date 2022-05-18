@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:desafio_keyworks/ui/pages/pages.dart';
+import '../../pages.dart';
 
 class ButtonLogin extends StatelessWidget {
   const ButtonLogin({

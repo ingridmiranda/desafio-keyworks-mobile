@@ -1,11 +1,10 @@
-import 'package:desafio_keyworks/domain/entities/news/news_content_entity.dart';
-import 'package:desafio_keyworks/domain/entities/news/news_entity.dart';
-import 'package:desafio_keyworks/ui/pages/news/news_page.dart';
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-import 'package:faker/faker.dart';
+import '../../../../domain/entities/entities.dart';
 import '../../../components/components.dart';
+import '../../pages.dart';
 import './components.dart';
 
 class NewsWidget extends StatelessWidget {

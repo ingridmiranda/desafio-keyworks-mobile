@@ -1,6 +1,7 @@
-import 'package:desafio_keyworks/domain/entities/news/news_entity.dart';
-import 'package:desafio_keyworks/ui/components/app_colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../domain/entities/news/news_entity.dart';
+import '../../components/app_colors.dart';
 
 class NewsPage extends StatelessWidget {
   final NewsEntity newsEntity;
