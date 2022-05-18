@@ -18,7 +18,7 @@ class _LaunchPageState extends State<LaunchPage> {
         const NewsWidget(),
         Container(
           alignment: Alignment.centerLeft,
-          padding: const EdgeInsets.only(left: 40, top: 40, bottom: 8),
+          padding: const EdgeInsets.only(left: 40, bottom: 8),
           child: const Text(
             'Lançamentos',
             style: TextStyle(
