@@ -1,4 +1,4 @@
-import 'package:desafio_keyworks/domain/entities/news/news_content_entity.dart';
+import '../entities.dart';
 
 class NewsEntity {
   final String title;

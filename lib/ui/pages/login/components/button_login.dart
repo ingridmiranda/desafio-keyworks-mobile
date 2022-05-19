@@ -1,3 +1,4 @@
+import 'package:desafio_keyworks/application/login/login_service.dart';
 import 'package:flutter/material.dart';
 
 import '../../pages.dart';
@@ -9,8 +10,10 @@ class ButtonLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _loginService = LoginService();
     return ElevatedButton(
-        onPressed: () {
+        onPressed: () async {
+          await _loginService.doLogin();
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => const HomePage()));
         },
