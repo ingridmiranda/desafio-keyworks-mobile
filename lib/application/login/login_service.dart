@@ -1,5 +1,6 @@
-import 'package:desafio_keyworks/infra/login/login_repository.dart';
 import 'package:get/get.dart';
+
+import '../../infra/login/login.dart';
 
 class LoginService extends GetxController {
   var isLoading = false.obs;

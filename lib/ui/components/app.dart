@@ -1,7 +1,7 @@
-import 'package:desafio_keyworks/ui/components/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../ui/components/app_pages.dart';
 import '../pages/pages.dart';
 import './components.dart';
 

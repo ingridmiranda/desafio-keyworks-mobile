@@ -1,5 +1,5 @@
-import 'package:desafio_keyworks/domain/entities/entities.dart';
-import 'package:desafio_keyworks/infra/launches/launches.dart';
+import '../../domain/entities/entities.dart';
+import '../../infra/launches/launches.dart';
 
 class LoginRepository {
   final _launchesRepository = LaunchesRepository();

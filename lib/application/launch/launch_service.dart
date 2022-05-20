@@ -1,6 +1,7 @@
-import 'package:desafio_keyworks/domain/entities/entities.dart';
-import 'package:desafio_keyworks/infra/launches/launches_repository.dart';
 import 'package:get/get.dart';
+
+import '../../domain/entities/entities.dart';
+import '../../infra/launches/launches_repository.dart';
 
 class LaunchService extends GetxController {
   var lastFourLaunches = <LaunchEntity>[];

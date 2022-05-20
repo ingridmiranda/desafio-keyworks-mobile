@@ -1,8 +1,8 @@
-import 'package:desafio_keyworks/utils/constants.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 
 import '../../domain/entities/entities.dart';
+import '../../utils/constants.dart';
 
 part 'launches_rest_client.g.dart';
 
