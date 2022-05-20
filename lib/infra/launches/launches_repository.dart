@@ -1,5 +1,7 @@
+import 'package:desafio_keyworks/application/launch/launch_service.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:get/get.dart';
 
 import '../../domain/entities/entities.dart';
 import '../../infra/launches/launches.dart';
@@ -9,6 +11,7 @@ class LaunchesRepository {
 
   Future<List<LaunchEntity?>?> receiveLastLaunches() async {
     var lastLaunches = <LaunchEntity?>[];
+    final launchService = Get.put(LaunchService());
     try {
       lastLaunches = await _launchesRestClient.getLaunches();
       var lastFourLaunches = <LaunchEntity?>[];
@@ -16,7 +19,7 @@ class LaunchesRepository {
         for (var i = 0; i < 4; i++) {
           lastFourLaunches.add(lastLaunches[i]);
         }
-        debugPrint("Deu certo");
+        launchService.lastFourLaunches.value = lastFourLaunches;
         return lastFourLaunches;
       }
     } catch (e) {
