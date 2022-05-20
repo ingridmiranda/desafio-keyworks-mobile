@@ -1,4 +1,6 @@
+import 'package:desafio_keyworks/ui/components/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../pages/pages.dart';
 import './components.dart';
@@ -8,9 +10,10 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Desafio Keyworks',
       debugShowCheckedModeBanner: false,
+      getPages: AppPages.pages,
       theme: ThemeData(
           fontFamily: 'Roboto',
           iconTheme: const IconThemeData(color: AppColors.lightColor),

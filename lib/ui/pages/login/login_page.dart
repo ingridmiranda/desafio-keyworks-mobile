@@ -8,22 +8,24 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              HeaderLogin(),
-              EmailInput(),
-              SizedBox(height: 36),
-              PasswordInput(),
-              SizedBox(height: 8),
-              ButtonForgotPassword(),
-              SizedBox(height: 5),
-              ButtonLogin()
-            ],
-          ),
-        ));
+        body: Container(
+      alignment: Alignment.center,
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            HeaderLogin(),
+            EmailInput(),
+            SizedBox(height: 36),
+            PasswordInput(),
+            SizedBox(height: 8),
+            ButtonForgotPassword(),
+            SizedBox(height: 5),
+            ButtonLogin()
+          ],
+        ),
+      ),
+    ));
   }
 }

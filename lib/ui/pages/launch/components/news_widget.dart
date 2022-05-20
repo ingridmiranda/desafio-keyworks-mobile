@@ -14,7 +14,7 @@ class NewsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _scrollController = ItemScrollController();
+    final scrollController = ItemScrollController();
     final newsText = [
       'Geomagnetic storm and recently deployed starlink satellites',
       'Starship Update',
@@ -27,7 +27,7 @@ class NewsWidget extends StatelessWidget {
     ];
 
     _changePosition(int value) {
-      _scrollController.jumpTo(index: value);
+      scrollController.jumpTo(index: value);
     }
 
     return SizedBox(
@@ -35,7 +35,7 @@ class NewsWidget extends StatelessWidget {
       child: ScrollablePositionedList.builder(
         itemCount: 3,
         shrinkWrap: true,
-        itemScrollController: _scrollController,
+        itemScrollController: scrollController,
         scrollDirection: Axis.horizontal,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (context, index) {

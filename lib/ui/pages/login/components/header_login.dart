@@ -10,7 +10,7 @@ class HeaderLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Image.asset('lib/ui/assets/rocket_launch_black_24dp.png'),
+      Image.asset('lib/ui/assets/images/rocket_launch_black_24dp.png'),
       const Padding(
         padding: EdgeInsets.only(top: 55, bottom: 36),
         child: Text(

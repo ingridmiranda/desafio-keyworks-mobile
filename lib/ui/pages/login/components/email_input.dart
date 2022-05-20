@@ -11,6 +11,7 @@ class EmailInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       cursorColor: AppColors.primaryColor,
+      style: const TextStyle(color: AppColors.lightColor),
       decoration: const InputDecoration(
         labelText: 'Usuário',
       ),
