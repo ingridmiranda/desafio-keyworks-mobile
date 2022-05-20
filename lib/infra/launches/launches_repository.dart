@@ -32,4 +32,20 @@ class LaunchesRepository {
     }
     return null;
   }
+
+  Future<LaunchpadEntity?> receiveSpecificLaunchpad(String? id) async {
+    if (id != null) {
+      try {
+        return await _launchesRestClient.getSpecificLaunchpad(id);
+      } catch (e) {
+        if (e is DioError) {
+          debugPrint(
+              '${e.response?.statusCode.toString()} - ${e.response?.statusMessage}');
+        } else {
+          debugPrint(e.toString());
+        }
+      }
+    }
+    return null;
+  }
 }

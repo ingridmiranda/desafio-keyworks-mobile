@@ -6,11 +6,17 @@ part 'launchpad_entity.g.dart';
 @JsonSerializable()
 class LaunchpadEntity {
   double latitude;
+
   double longitude;
-  String locality;
-  String region;
-  String name;
-  String fullName;
+
+  String? locality;
+
+  String? region;
+
+  String? name;
+
+  @JsonKey(name: 'full_name')
+  String? fullName;
 
   LaunchpadEntity({
     required this.latitude,

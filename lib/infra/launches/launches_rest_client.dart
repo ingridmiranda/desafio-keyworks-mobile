@@ -12,4 +12,7 @@ abstract class LaunchesRestClient {
 
   @GET("/launches/upcoming/")
   Future<List<LaunchEntity>> getLaunches();
+
+  @GET("/launchpads/{id}/")
+  Future<LaunchpadEntity> getSpecificLaunchpad(@Path() String id);
 }

@@ -5,15 +5,15 @@ part 'launch_entity.g.dart';
 
 @JsonSerializable()
 class LaunchEntity {
-  String? name;
+  String name;
 
   @JsonKey(name: 'date_utc')
-  DateTime? dateUtc;
+  DateTime dateUtc;
 
   @JsonKey(name: 'date_local')
-  DateTime? dateLocal;
+  DateTime dateLocal;
 
-  String? launchpad;
+  String launchpad;
 
   LaunchEntity({
     required this.name,
