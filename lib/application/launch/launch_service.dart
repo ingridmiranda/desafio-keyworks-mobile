@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:ui' as ui;
 import 'dart:typed_data';
 
@@ -96,8 +97,21 @@ class LaunchService extends GetxController {
           markerId: markerId,
           icon: BitmapDescriptor.fromBytes(markerIcon),
           position: LatLng(allLaunchpads[i]?.latitude ?? 0,
-              allLaunchpads[i]?.longitude ?? 0));
+              allLaunchpads[i]?.longitude ?? 0),
+          infoWindow: InfoWindow(
+              title: lastFourLaunches[i]?.name,
+              snippet:
+                  '${allLaunchpads[i]?.locality}, ${allLaunchpads[i]?.region}'));
       markers[markerId] = marker;
     }
+  }
+
+  final Completer<GoogleMapController> mapsController = Completer();
+  GoogleMapController? googleMapController;
+
+  onMapTapped(LatLng latLng) async {
+    googleMapController = await mapsController.future;
+    googleMapController
+        ?.showMarkerInfoWindow(MarkerId('${allLaunchpads[0]?.name}'));
   }
 }
