@@ -12,7 +12,6 @@ class ButtonLogin extends GetView<LoginService> {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(LoginService());
     return Obx(() {
       return ElevatedButton(
           onPressed: () async {

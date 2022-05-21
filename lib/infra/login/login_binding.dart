@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import 'package:desafio_keyworks/application/login/login_service.dart';
+import '../../application/services.dart';
 
 class LoginBinding extends Bindings {
   @override

@@ -88,9 +88,7 @@ class NewsWidget extends StatelessWidget {
                               child: Text(
                                 newsText[index].toUpperCase(),
                                 style: const TextStyle(
-                                    fontSize: 25,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.lightColor),
+                                    fontSize: 25, fontWeight: FontWeight.bold),
                               ),
                             ),
                           ),

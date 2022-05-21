@@ -37,9 +37,7 @@ class NewsPage extends StatelessWidget {
                     child: Text(
                       newsEntity.title.toUpperCase(),
                       style: const TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.lightColor),
+                          fontSize: 25, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],
@@ -50,10 +48,8 @@ class NewsPage extends StatelessWidget {
               padding: const EdgeInsets.only(top: 4, bottom: 17, left: 40),
               child: Text(
                 'Fonte: ${newsEntity.source}',
-                style: const TextStyle(
-                    color: AppColors.lightColor,
-                    fontSize: 11,
-                    fontWeight: FontWeight.w300),
+                style:
+                    const TextStyle(fontSize: 11, fontWeight: FontWeight.w300),
               ),
             ),
             Container(
@@ -72,7 +68,6 @@ class NewsPage extends StatelessWidget {
               child: Text(
                 newsEntity.contentEntity.text,
                 style: const TextStyle(
-                  color: AppColors.lightColor,
                   fontSize: 18,
                   fontWeight: FontWeight.normal,
                 ),

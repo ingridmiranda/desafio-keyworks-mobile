@@ -53,14 +53,11 @@ class LaunchInfoWidget extends GetView<LaunchService> {
                               Text(
                                   controller.lastFourLaunches[index]?.name ??
                                       "Nome não informado",
-                                  style: const TextStyle(
-                                      color: AppColors.lightColor,
-                                      fontSize: 16)),
+                                  style: const TextStyle(fontSize: 16)),
                               Text(
                                   controller.convertDateAndHour(controller
                                       .lastFourLaunches[index]?.dateLocal),
                                   style: const TextStyle(
-                                      color: AppColors.lightColor,
                                       fontSize: 11,
                                       fontWeight: FontWeight.w300)),
                             ],

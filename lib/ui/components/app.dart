@@ -15,6 +15,9 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       getPages: AppPages.pages,
       theme: ThemeData(
+          textTheme: Theme.of(context).textTheme.apply(
+              bodyColor: AppColors.lightColor,
+              displayColor: AppColors.lightColor),
           fontFamily: 'Roboto',
           iconTheme: const IconThemeData(color: AppColors.lightColor),
           primaryColor: AppColors.primaryColor,

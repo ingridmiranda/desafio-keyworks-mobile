@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../components/components.dart';
-
 class HeaderLogin extends StatelessWidget {
   const HeaderLogin({
     Key? key,
@@ -15,7 +13,7 @@ class HeaderLogin extends StatelessWidget {
         padding: EdgeInsets.only(top: 55, bottom: 36),
         child: Text(
           'Acesso',
-          style: TextStyle(fontSize: 25, color: AppColors.lightColor),
+          style: TextStyle(fontSize: 25),
         ),
       )
     ]);
