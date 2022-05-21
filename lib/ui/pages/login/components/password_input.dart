@@ -1,7 +1,7 @@
-import 'package:desafio_keyworks/application/login/login_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../application/services.dart';
 import '../../../components/components.dart';
 
 class PasswordInput extends GetView<LoginService> {
@@ -22,7 +22,10 @@ class PasswordInput extends GetView<LoginService> {
             suffixIcon: controller.password.value.isNotEmpty
                 ? IconButton(
                     onPressed: () => controller.passwordController.clear(),
-                    icon: const Icon(Icons.close))
+                    icon: const Icon(
+                      Icons.close,
+                      color: AppColors.lightColor,
+                    ))
                 : const SizedBox()),
         keyboardType: TextInputType.visiblePassword,
         obscureText: true,

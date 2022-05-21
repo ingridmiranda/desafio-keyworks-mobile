@@ -1,15 +1,15 @@
 import 'dart:async';
-import 'dart:ui' as ui;
 import 'dart:typed_data';
+import 'dart:ui' as ui;
 
-import 'package:desafio_keyworks/ui/components/app_colors.dart';
-import 'package:desafio_keyworks/ui/pages/pages.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import '../../ui/components/components.dart';
+import '../../ui/pages/pages.dart';
 import '../../domain/entities/entities.dart';
-import '../../infra/launches/launches_repository.dart';
+import '../../infra/launches/launches.dart';
 
 class LaunchService extends GetxController {
   var lastFourLaunches = <LaunchEntity?>[].obs;

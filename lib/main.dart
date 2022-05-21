@@ -1,9 +1,9 @@
-import 'package:desafio_keyworks/domain/entities/configurations/configurations_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:get/get.dart';
 
 import '../../application/services.dart';
+import '../../domain/entities/configurations/configurations_entity.dart';
 import '../ui/components/app.dart';
 
 void main() {
