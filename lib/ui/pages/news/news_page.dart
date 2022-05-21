@@ -31,17 +31,15 @@ class NewsPage extends StatelessWidget {
                     newsEntity.image,
                     fit: BoxFit.fitWidth,
                   ),
-                  Flexible(
-                    child: Container(
-                      alignment: Alignment.center,
-                      padding: const EdgeInsets.only(left: 45, right: 15),
-                      child: Text(
-                        newsEntity.title.toUpperCase(),
-                        style: const TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.lightColor),
-                      ),
+                  Container(
+                    alignment: Alignment.center,
+                    padding: const EdgeInsets.only(left: 45, right: 15),
+                    child: Text(
+                      newsEntity.title.toUpperCase(),
+                      style: const TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.lightColor),
                     ),
                   ),
                 ],
