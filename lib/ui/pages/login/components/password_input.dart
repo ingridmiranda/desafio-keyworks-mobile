@@ -21,7 +21,7 @@ class PasswordInput extends GetView<LoginService> {
             labelText: 'Senha',
             suffixIcon: controller.password.value.isNotEmpty
                 ? IconButton(
-                    onPressed: () => controller.passwordController.clear(),
+                    onPressed: () => controller.clearPassword(),
                     icon: const Icon(
                       Icons.close,
                       color: AppColors.lightColor,

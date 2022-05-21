@@ -1,10 +1,10 @@
-import 'package:desafio_keyworks/application/launch/launch_service.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../application/services.dart';
 import '../../domain/entities/entities.dart';
-import '../../infra/launches/launches.dart';
+import './launches.dart';
 
 class LaunchesRepository {
   final _launchesRestClient = LaunchesRestClient(Dio());

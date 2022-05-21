@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../domain/entities/news/news_entity.dart';
+import '../../../domain/entities/entities.dart';
 import '../../components/app_colors.dart';
 
 class NewsPage extends StatelessWidget {

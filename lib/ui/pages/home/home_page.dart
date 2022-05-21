@@ -1,7 +1,7 @@
-import 'package:desafio_keyworks/application/launch/launch_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../application/services.dart';
 import './components/components.dart';
 
 class HomePage extends GetView<LaunchService> {

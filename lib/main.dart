@@ -3,7 +3,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:get/get.dart';
 
 import '../../application/services.dart';
-import '../../domain/entities/configurations/configurations_entity.dart';
+import '../../domain/entities/entities.dart';
 import '../ui/components/app.dart';
 
 void main() {

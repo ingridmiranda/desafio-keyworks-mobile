@@ -1,8 +1,8 @@
-import 'package:desafio_keyworks/application/configurations/configurations_service.dart';
-import 'package:desafio_keyworks/domain/entities/configurations/configurations_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../application/services.dart';
+import '../../domain/entities/entities.dart';
 import '../../infra/login/login.dart';
 
 class LoginService extends GetxController {

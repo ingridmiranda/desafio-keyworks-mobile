@@ -87,6 +87,25 @@ class LaunchService extends GetxController {
         Uint8List(0);
   }
 
+  var isLoadingMap = false.obs;
+
+  initMaps() async {
+    isLoadingMap.value = true;
+    await getMarkers();
+    await initCameraPosition();
+    Timer(const Duration(seconds: 1), () {
+      isLoadingMap.value = false;
+    });
+  }
+
+  initCameraPosition() {
+    kGooglePlex = CameraPosition(
+      target: LatLng(
+          allLaunchpads[0]?.latitude ?? 0, allLaunchpads[0]?.longitude ?? 0),
+      zoom: 11.5,
+    );
+  }
+
   getMarkers() async {
     for (var i = 0; i < allLaunchpads.length; i++) {
       createMarker(i);
@@ -114,6 +133,7 @@ class LaunchService extends GetxController {
 
   Completer<GoogleMapController> mapsCompleter = Completer();
   GoogleMapController? googleMapController;
+  CameraPosition kGooglePlex = const CameraPosition(target: LatLng(0, 0));
 
   onMapTapped(int index) async {
     googleMapController = await mapsCompleter.future;

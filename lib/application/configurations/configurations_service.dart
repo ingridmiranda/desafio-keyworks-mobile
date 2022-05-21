@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../domain/entities/configurations/configurations_entity.dart';
+import '../../application/services.dart';
+import '../../domain/entities/entities.dart';
 import '../../infra/login/login.dart';
 
 class ConfigurationsService extends GetxController {
@@ -33,6 +34,7 @@ class ConfigurationsService extends GetxController {
         isDarkMode: isDarkMode.value,
         language: dropdownOption.value));
     Get.snackbar('Sucesso!', 'Suas configurações foram salvas com sucesso...');
+    Get.put(LaunchService()).setMenuOption(0);
   }
 
   onChangeText(String text) {

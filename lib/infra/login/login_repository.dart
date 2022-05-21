@@ -1,10 +1,9 @@
-import 'package:desafio_keyworks/application/launch/launch_service.dart';
-import 'package:desafio_keyworks/domain/entities/configurations/configurations_entity.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
 
+import '../../application/services.dart';
 import '../../domain/entities/entities.dart';
-import '../../infra/launches/launches.dart';
+import '../launches/launches.dart';
 
 class LoginRepository {
   final _launchesRepository = LaunchesRepository();
