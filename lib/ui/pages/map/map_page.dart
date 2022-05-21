@@ -20,10 +20,15 @@ class MapPage extends GetView<LaunchService> {
       return GoogleMap(
           mapType: MapType.normal,
           initialCameraPosition: _kGooglePlex,
-          onTap: controller.onMapTapped,
           markers: Set<Marker>.of(controller.markers.values),
-          onMapCreated: (GoogleMapController googleMapController) {
-            controller.mapsController.complete(googleMapController);
+          onMapCreated: (GoogleMapController googleMapController) async {
+            if (!controller.mapsCompleter.isCompleted) {
+              controller.mapsCompleter.complete(googleMapController);
+              googleMapController = await controller.mapsCompleter.future;
+              controller.googleMapController = googleMapController;
+            } else {
+              controller.googleMapController = googleMapController;
+            }
           });
     });
   }

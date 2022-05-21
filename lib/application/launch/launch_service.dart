@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:ui' as ui;
 import 'dart:typed_data';
 
+import 'package:desafio_keyworks/ui/components/app_colors.dart';
+import 'package:desafio_keyworks/ui/pages/pages.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -86,32 +88,58 @@ class LaunchService extends GetxController {
   }
 
   getMarkers() async {
+    for (var i = 0; i < allLaunchpads.length; i++) {
+      createMarker(i);
+    }
+  }
+
+  createMarker(int index) async {
     var markerId = const MarkerId('1');
     var marker = Marker(markerId: markerId, position: const LatLng(0, 0));
     var markerIcon = await getBytesFromAsset(
         'lib/ui/assets/images/rocket_launch_red_24dp.png', 100);
 
-    for (var i = 0; i < allLaunchpads.length; i++) {
-      markerId = MarkerId('${allLaunchpads[i]?.name}');
-      marker = Marker(
-          markerId: markerId,
-          icon: BitmapDescriptor.fromBytes(markerIcon),
-          position: LatLng(allLaunchpads[i]?.latitude ?? 0,
-              allLaunchpads[i]?.longitude ?? 0),
-          infoWindow: InfoWindow(
-              title: lastFourLaunches[i]?.name,
-              snippet:
-                  '${allLaunchpads[i]?.locality}, ${allLaunchpads[i]?.region}'));
-      markers[markerId] = marker;
-    }
+    markerId = MarkerId('${lastFourLaunches[index]?.name}');
+    marker = Marker(
+        markerId: markerId,
+        icon: BitmapDescriptor.fromBytes(markerIcon),
+        position: LatLng(allLaunchpads[index]?.latitude ?? 0,
+            allLaunchpads[index]?.longitude ?? 0),
+        infoWindow: InfoWindow(
+            title: lastFourLaunches[index]?.name,
+            snippet:
+                '${allLaunchpads[index]?.locality}, ${allLaunchpads[index]?.region}'));
+    markers[markerId] = marker;
   }
 
-  final Completer<GoogleMapController> mapsController = Completer();
+  Completer<GoogleMapController> mapsCompleter = Completer();
   GoogleMapController? googleMapController;
 
-  onMapTapped(LatLng latLng) async {
-    googleMapController = await mapsController.future;
-    googleMapController
-        ?.showMarkerInfoWindow(MarkerId('${allLaunchpads[0]?.name}'));
+  onMapTapped(int index) async {
+    googleMapController = await mapsCompleter.future;
+    Timer(const Duration(seconds: 1), () {
+      googleMapController
+          ?.showMarkerInfoWindow(MarkerId('${lastFourLaunches[index]?.name}'));
+    });
+  }
+
+  var currentIndex = 0.obs;
+  final currentColor = [
+    AppColors.primaryColor,
+    AppColors.secondaryColor,
+    AppColors.secondaryColor
+  ];
+  final widgetsList = const [LaunchPage(), MapPage(), ConfigurationsPage()];
+  final titleList = ['Home', 'Mapa', 'Configurações'];
+
+  void setMenuOption(int value) {
+    currentIndex.value = value;
+    currentColor.asMap().forEach((index, element) {
+      if (index == value) {
+        currentColor[index] = AppColors.primaryColor;
+      } else {
+        currentColor[index] = AppColors.secondaryColor;
+      }
+    });
   }
 }

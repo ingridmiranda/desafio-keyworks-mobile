@@ -5,9 +5,16 @@ import '../../../application/services.dart';
 import '../../components/components.dart';
 import './components/components.dart';
 
-class LaunchPage extends GetView<LaunchService> {
+var controller = Get.put(LaunchService());
+
+class LaunchPage extends StatefulWidget {
   const LaunchPage({Key? key}) : super(key: key);
 
+  @override
+  State<LaunchPage> createState() => _LaunchPageState();
+}
+
+class _LaunchPageState extends State<LaunchPage> {
   @override
   Widget build(BuildContext context) {
     return Flex(
@@ -43,36 +50,43 @@ class LaunchPage extends GetView<LaunchService> {
                           shrinkWrap: true,
                           itemCount: controller.lastFourLaunches.length,
                           itemBuilder: (context, index) {
-                            return Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 16, right: 21, top: 14, bottom: 14),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                          controller.lastFourLaunches[index]
-                                                  ?.name ??
-                                              "Nome não informado",
-                                          style: const TextStyle(
-                                              color: AppColors.lightColor,
-                                              fontSize: 16)),
-                                      Text(
-                                          controller.convertDateAndHour(
-                                              controller.lastFourLaunches[index]
-                                                  ?.dateLocal),
-                                          style: const TextStyle(
-                                              color: AppColors.lightColor,
-                                              fontSize: 11,
-                                              fontWeight: FontWeight.w300)),
-                                    ],
-                                  ),
-                                  const Icon(Icons.place)
-                                ],
+                            return GestureDetector(
+                              onTap: () async {
+                                controller.setMenuOption(1);
+                                await controller.onMapTapped(index);
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 16, right: 21, top: 14, bottom: 14),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                            controller.lastFourLaunches[index]
+                                                    ?.name ??
+                                                "Nome não informado",
+                                            style: const TextStyle(
+                                                color: AppColors.lightColor,
+                                                fontSize: 16)),
+                                        Text(
+                                            controller.convertDateAndHour(
+                                                controller
+                                                    .lastFourLaunches[index]
+                                                    ?.dateLocal),
+                                            style: const TextStyle(
+                                                color: AppColors.lightColor,
+                                                fontSize: 11,
+                                                fontWeight: FontWeight.w300)),
+                                      ],
+                                    ),
+                                    const Icon(Icons.place)
+                                  ],
+                                ),
                               ),
                             );
                           });

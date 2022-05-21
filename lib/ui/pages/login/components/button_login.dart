@@ -1,9 +1,9 @@
+import 'package:desafio_keyworks/ui/pages/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../application/services.dart';
 import '../../../components/app_colors.dart';
-import '../../pages.dart';
 
 class ButtonLogin extends GetView<LoginService> {
   const ButtonLogin({
