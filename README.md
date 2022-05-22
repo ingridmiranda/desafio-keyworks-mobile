@@ -35,3 +35,18 @@ Essa é uma aplicação criada em Flutter com o intuito de consumir os dados de 
 - dropdown_button2
 - animated_splash_screen
 
+## APK 
+
+O APK para essa aplicação pode ser acessado no seguinte link: 
+
+https://drive.google.com/drive/folders/1-yAlzjNYVn2XyHGiGlJcvVWMGg6gc-6o?usp=sharing
+
+
+## Build
+
+Por questões de segurança, para buildar esse projeto, é necessário adicionar a chave da sua API do Google Maps no **local.properties** da seguinte forma:
+
+ ``maps.apiKey={digitar chave correspondente}``
+
+
+
