@@ -1,16 +1,37 @@
-# desafio_keyworks
+# Desafio keyworks
 
-A new Flutter project.
+## Sobre
+Essa é uma aplicação criada em Flutter com o intuito de consumir os dados de lançamento de foguetes da API SpaceX e listar os 4 próximos foguetes a serem lançados. Mostrando em um mapa, vinculado a API do Google Maps, a localização de cada um deles. Além disso, mostra um carrosel com 3 notícias, com textos Lorem Ipsum.
 
-## Getting Started
+## Tecnologias externas utilizadas
 
-This project is a starting point for a Flutter application.
+- Mapa: API do Google Maps.
+- API Rest: SpaceX, disponível no link https://github.com/r-spacex/SpaceXAPI/blob/master/docs/README.md
 
-A few resources to get you started if this is your first Flutter project:
+## Pacotes do Flutter
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+#### Para integração com API rest:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- retrofit
+- dio
+- json_annotation
+
+#### Para armazenamento de dados locais
+- hive
+- hive_flutter
+- hive_generator
+
+#### Para utilização da API do Google Maps
+- google_maps_flutter
+
+#### Para exibição de textos Lorem Ipsum
+- faker
+
+#### Para gerenciamento de estados, dependências e rotas
+- get
+
+#### Para complementar elementos de UI
+- scrollable_positioned_list
+- dropdown_button2
+- animated_splash_screen
+
