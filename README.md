@@ -1,4 +1,4 @@
-# Desafio SpaceX Maps Flutter
+# Desafio SpaceX Maps Flutter - Keyworks
 
 ## Sobre
 Essa é uma aplicação criada em Flutter com o intuito de consumir os dados de lançamento de foguetes da API SpaceX e listar os 4 próximos foguetes a serem lançados. Mostrando em um mapa, vinculado a API do Google Maps, a localização de cada um deles. Além disso, mostra um carrosel com 3 notícias, com textos Lorem Ipsum.
